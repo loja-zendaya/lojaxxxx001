@@ -238,6 +238,33 @@ body{padding-bottom:74px}
 #shadd{background:#fff;border-color:var(--ln2)}
 #sheet{background:var(--bg)}
 .card{transition:transform .15s,box-shadow .25s,border-color .25s}
+
+/* ---- formulário de endereço (v8) ---- */
+#zyform{max-width:660px;margin:6px auto 0}
+.zyfbox{background:linear-gradient(180deg,#1A1431,#141021);border:1px solid var(--line);border-radius:18px;padding:18px 16px 20px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.zyfintro{font-size:13px;color:var(--mut);margin-bottom:4px;line-height:1.45}
+.zyfnote{background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.4);border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.55;color:#FCA5A5;margin:10px 0}
+.zyfnote .res{color:#F87171;font-weight:800}
+.zyfcap{font-size:11.5px;color:var(--mut);background:rgba(168,85,247,.08);border:1px dashed var(--line2);border-radius:10px;padding:8px 10px;margin:10px 0;line-height:1.5}
+.zyfld{margin:11px 0}
+.zyfld>label{display:block;font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--mut);margin-bottom:5px}
+.zyfld .opt{font-weight:400;text-transform:none;letter-spacing:0;color:var(--dim)}
+.zyfld input,.zyfld select,.zyfld textarea{width:100%;box-sizing:border-box;background:#0E0B18;border:1px solid var(--line);border-radius:11px;color:var(--ink);font-size:15px;padding:11px 12px;outline:none;font-family:inherit;-webkit-appearance:none;appearance:none}
+.zyfld select{padding-right:26px;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23A855F7'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.zyfld input:focus,.zyfld select:focus,.zyfld textarea:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--glow)}
+.zyfld textarea{min-height:74px;resize:vertical}
+.zyenv{display:flex;gap:8px}
+.zychip{flex:1;text-align:center;border:1px solid var(--line);border-radius:11px;padding:11px 6px;font-size:13px;font-weight:800;color:var(--mut);cursor:pointer;background:#0E0B18;user-select:none}
+.zychip.on{border-color:var(--acc);color:#fff;background:rgba(168,85,247,.20);box-shadow:0 0 14px var(--glow)}
+.zyprev{margin-top:16px}
+.zyprev .lab{font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
+#zyfpv{width:100%;box-sizing:border-box;min-height:220px;background:#0B0814;border:1px solid var(--line);border-radius:12px;color:#D9D2EC;font-size:12px;line-height:1.6;padding:12px;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;margin:0}
+.zybtns{display:flex;gap:10px;margin-top:13px}
+.zybtn{flex:1;border:none;border-radius:12px;padding:13px 10px;font-size:13.5px;font-weight:800;cursor:pointer;color:#fff;font-family:inherit;letter-spacing:.2px}
+.zybtn.cpy{background:linear-gradient(135deg,#8B5CF6,#D946EF)}
+.zybtn.wa{background:linear-gradient(135deg,#25D366,#128C7E)}
+.zybtn:active{transform:scale(.97)}
+@media(max-width:420px){.zybtns{flex-direction:column}}
 </style></head><body>
 <div class="mq"><div class="mq-in"><div class="mq-g"><span>ZENDA YA ✦ IMPORTAÇÃO DIRETA ✦ ENVIO TERÇA & QUINTA ✦ SAI DE SP ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ SEM RESHIP ✦</span></div><div class="mq-g"><span>ZENDA YA ✦ IMPORTAÇÃO DIRETA ✦ ENVIO TERÇA & QUINTA ✦ SAI DE SP ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ SEM RESHIP ✦</span></div></div></div>
 <header>
@@ -257,7 +284,7 @@ body{padding-bottom:74px}
 <div class="bar">
  <input id="q" type="search" placeholder="BUSCAR PRODUTO…" autocomplete="off">
  <div class="tabs" id="tabs">
-  <button type="button" class="tb on" data-t="all">TODOS</button>
+  <button type="button" class="tb on" data-t="all">TODOS</button><button type="button" class="tb" data-t="form">📋 PEDIR</button> 
   
   <button type="button" class="tb" data-t="ice">ICE</button>
   <button type="button" class="tb" data-t="dry">DRY</button>
@@ -271,6 +298,28 @@ body{padding-bottom:74px}
 </div>
 <main id="vshop">
 <div id="hint" class="hint"><span>⤓ TOQUE EM “ADICIONAR À TELA INICIAL” PRA ABRIR A ZENDA YA COMO APP</span><button type="button" id="hintx">✕</button></div>
+<section class="sec" data-sec="form" id="sec-form"><h2>FÓRMULARIO DE ENDEREÇO ✍️</h2>
+<div id="zyform"><div class="zyfbox">
+<div class="zyfintro">Preencha abaixo que sua mensagem de pedido fica pronta sozinha — é só <b>copiar</b> ou <b>mandar direto no WhatsApp</b>.</div>
+<div class="zyfld"><label>Seu vulgo</label><input id="zyvul" maxlength="40" autocomplete="off" placeholder="como você quer ser chamado(a)"></div>
+<div class="zyfnote">Preste atenção no preenchimento.<br>Antes de me encaminhar confira o endereço com atenção. <b>Você é o único responsável caso esteja incorreto 😉</b><br><span class="res">❌ NÃO EXISTE RESHIP ❌</span></div>
+<div class="zyfcap">PREENCHER EXATAMENTE NA ORDEM DO FORMULÁRIO · Use a primeira letra maiúscula nos nomes próprios e mantenha as demais letras minúsculas.<br>Ex: <b>João Oliveira de Jesus</b> · <b>Rua José de Sá</b> <i>(isso evita possíveis erros na edição)</i></div>
+<div class="zyfld"><label>Nome</label><input id="zynome" autocomplete="name" placeholder="nome completo"></div>
+<div class="zyfld"><label>CPF</label><input id="zycpf" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00"></div>
+<div class="zyfld"><label>Tel <span class="opt">(obrigatório se for por transportadora)</span></label><input id="zytel" inputmode="tel" autocomplete="off" placeholder="(00) 00000-0000"></div>
+<div class="zyfld"><label>Endereço</label><input id="zyend" autocomplete="address-line1" placeholder="rua / avenida"></div>
+<div class="zyfld"><label>Número</label><input id="zynum" inputmode="numeric" placeholder="nº"></div>
+<div class="zyfld"><label>Complemento <span class="opt">(opcional)</span></label><input id="zycomp" placeholder="apto, bloco…"></div>
+<div class="zyfld"><label>Bairro</label><input id="zybair"></div>
+<div class="zyfld"><label>Cidade</label><input id="zycid"></div>
+<div class="zyfld"><label>Estado</label><select id="zyuf"><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
+<div class="zyfld"><label>CEP</label><input id="zycep" inputmode="numeric" autocomplete="off" placeholder="00000-000"></div>
+<div class="zyfld"><label>📝 Pedido</label><textarea id="zyped" placeholder="ex: 2x tubo 120ug + 10 balas gringas"></textarea></div>
+<div class="zyfld"><label>🚚📦 Escolha a forma de envio</label><div class="zyenv"><span class="zychip" id="zye1">📫 Correio</span><span class="zychip" id="zye2">🚛 Transportadora</span></div></div>
+</div>
+<div class="zyprev"><div class="lab">Sua mensagem pronta — confira antes de enviar</div><pre id="zyfpv"></pre></div>
+<div class="zybtns"><button type="button" class="zybtn cpy" id="zyfcopy">📋 COPIAR MENSAGEM</button><button type="button" class="zybtn wa" id="zyfsend">📤 MANDAR NO WHATSAPP</button></div>
+</div></section>
 <section class="sec" data-sec="ice"><h2>ICE<span class="cnt">5</span></h2><div class="grid">
 
 <article class="card" data-k="ice_1" data-cat="ice" data-n="🥶 cold press — lcg" style="--d:45ms">
@@ -1357,4 +1406,64 @@ try{if(localStorage.getItem('zy_hint2')){h.style.display='none';return}}catch(e)
 var b=$('#hintx');if(b)b.addEventListener('click',function(){h.style.display='none';try{localStorage.setItem('zy_hint2','1')}catch(e){}});
 })();
 })();
-</script></body></html>
+</script><script>
+(function(){
+var g=function(id){return document.getElementById(id)};
+if(!g('zyform'))return;
+function digits(s){return s.replace(/\D/g,'')}
+function mCPF(v){var d=digits(v).slice(0,11),o='';if(d.length>0)o=d.slice(0,3);if(d.length>3)o+='.'+d.slice(3,6);if(d.length>6)o+='.'+d.slice(6,9);if(d.length>9)o+='-'+d.slice(9);return o}
+function mTEL(v){var d=digits(v).slice(0,11),o='';if(d.length>0)o='('+d.slice(0,2)+')';if(d.length>2)o+=' '+d.slice(2,7);if(d.length>7)o+='-'+d.slice(7);return o}
+function mCEP(v){var d=digits(v).slice(0,8),o=d.slice(0,5);if(d.length>5)o+='-'+d.slice(5);return o}
+function val(id){var e=g(id);return e?e.value.trim():''}
+function ENV(){return g('zye1').classList.contains('on')?'CORREIO':(g('zye2').classList.contains('on')?'TRANSPORTADORA':'')}
+function build(){
+var ped=val('zyped');
+if(!ped&&window.ZY&&typeof window.ZY.bagTxt==='function'){try{ped=window.ZY.bagTxt()}catch(e){ped=''}}
+var L=[];
+L.push('💎Fórmulario de endereço ✍️','');
+L.push('Seu Vulgo: '+val('zyvul'));
+L.push('');
+L.push('Preste atenção no preenchimento.');
+L.push('Antes de me encaminhar confira o endereço com atenção. Você é o único responsável caso esteja incorreto 😉');
+L.push('❌NÃO EXISTE RESHIP❌');
+L.push('');
+L.push('PREENCHER EXATAMENTE NA ORDEM DO FORMULÁRIO');
+L.push('Nome: '+val('zynome'));
+L.push('CPF: '+val('zycpf'));
+L.push('TEL: '+val('zytel')+'   Se for transportadora');
+L.push('Endereço: '+val('zyend'));
+L.push('Numero: '+val('zynum'));
+L.push('Complemento: '+val('zycomp'));
+L.push('Bairro: '+val('zybair'));
+L.push('Cidade: '+val('zycid'));
+L.push('Estado: '+g('zyuf').value);
+L.push('Cep: '+val('zycep'));
+L.push('');
+L.push('');
+L.push('📝Pedido: ');
+L.push(ped);
+L.push('');
+L.push('🚚📦 escolha a forma  de envio: '+ENV());
+L.push('');
+L.push('Preencha seus dados utilizando a primeira letra maiúscula nos nomes próprios e mantendo as demais letras minúsculas');
+L.push('Ex: João Oliveira de Jesus');
+L.push('Rua José de Sá');
+L.push('(Isso evita possíveis erro na edição).');
+var txt=L.join('\n');
+g('zyfpv').textContent=txt;
+return txt;
+}
+function legacy(ta,cb){var el=document.createElement('textarea');el.value=ta;el.style.position='fixed';el.style.opacity='0';document.body.appendChild(el);el.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(el);cb()}
+function doCopy(t,cb){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(cb,function(){legacy(t,cb)})}else legacy(t,cb)}
+function flash(b,txt){var o=b.textContent;b.textContent=txt;b.disabled=true;setTimeout(function(){b.textContent=o;b.disabled=false},1400)}
+var M={'zycpf':mCPF,'zytel':mTEL,'zycep':mCEP};
+Object.keys(M).forEach(function(id){g(id).addEventListener('input',function(){this.value=M[id](this.value);build()})});
+['zyvul','zynome','zyend','zynum','zycomp','zybair','zycid','zyped'].forEach(function(id){g(id).addEventListener('input',build)});
+g('zyuf').addEventListener('change',build);
+['zye1','zye2'].forEach(function(id){g(id).addEventListener('click',function(){var on=g(id).classList.contains('on');g('zye1').classList.remove('on');g('zye2').classList.remove('on');if(!on)g(id).classList.add('on');build()})});
+g('zyfcopy').addEventListener('click',function(){doCopy(build(),function(){flash(this,'✅ COPIADA!')}.bind(g('zyfcopy')))});
+g('zyfsend').addEventListener('click',function(){window.open('https://wa.me/5511973303761?text='+encodeURIComponent(build()),'_blank')});
+build();
+})();
+</script>
+</body></html>
