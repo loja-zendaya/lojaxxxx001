@@ -239,31 +239,39 @@ body{padding-bottom:74px}
 #sheet{background:var(--bg)}
 .card{transition:transform .15s,box-shadow .25s,border-color .25s}
 
-/* ---- formulário de endereço (v8) ---- */
+/* ---- formulário de endereço / drop (v9 · tema rosa) ---- */
 #zyform{max-width:660px;margin:6px auto 0}
-.zyfbox{background:linear-gradient(180deg,#1A1431,#141021);border:1px solid var(--line);border-radius:18px;padding:18px 16px 20px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.zyfbox{background:var(--pan);border:1px solid var(--ln);border-radius:20px;padding:18px 16px 20px;box-shadow:0 12px 40px rgba(189,21,128,.10)}
 .zyfintro{font-size:13px;color:var(--mut);margin-bottom:4px;line-height:1.45}
-.zyfnote{background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.4);border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.55;color:#FCA5A5;margin:10px 0}
-.zyfnote .res{color:#F87171;font-weight:800}
-.zyfcap{font-size:11.5px;color:var(--mut);background:rgba(168,85,247,.08);border:1px dashed var(--line2);border-radius:10px;padding:8px 10px;margin:10px 0;line-height:1.5}
+.zyfnote{background:#fff0f0;border:1px solid #ffd0d0;border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.55;color:#c0392b;margin:10px 0}
+.zyfnote .res{color:#ff2d55;font-weight:800}
+.zyfcap{font-size:11.5px;color:var(--mut);background:var(--pan2);border:1px dashed var(--ln2);border-radius:10px;padding:8px 10px;margin:10px 0;line-height:1.5}
 .zyfld{margin:11px 0}
-.zyfld>label{display:block;font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--mut);margin-bottom:5px}
-.zyfld .opt{font-weight:400;text-transform:none;letter-spacing:0;color:var(--dim)}
-.zyfld input,.zyfld select,.zyfld textarea{width:100%;box-sizing:border-box;background:#0E0B18;border:1px solid var(--line);border-radius:11px;color:var(--ink);font-size:15px;padding:11px 12px;outline:none;font-family:inherit;-webkit-appearance:none;appearance:none}
-.zyfld select{padding-right:26px;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23A855F7'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
-.zyfld input:focus,.zyfld select:focus,.zyfld textarea:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--glow)}
+.zyfld>label{display:block;font-family:'Space Mono',monospace;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:5px}
+.zyfld .opt{font-weight:400;text-transform:none;letter-spacing:.02em;opacity:.75}
+.zyfld input,.zyfld select,.zyfld textarea{width:100%;box-sizing:border-box;background:var(--pan2);border:1px solid var(--ln);border-radius:11px;color:var(--tx);font-size:14px;padding:11px 12px;outline:none;font-family:inherit;-webkit-appearance:none;appearance:none}
+.zyfld select{padding-right:26px;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23e6369c'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.zyfld input:focus,.zyfld select:focus,.zyfld textarea:focus{border-color:var(--pk);box-shadow:0 0 0 4px rgba(230,54,156,.12)}
 .zyfld textarea{min-height:74px;resize:vertical}
 .zyenv{display:flex;gap:8px}
-.zychip{flex:1;text-align:center;border:1px solid var(--line);border-radius:11px;padding:11px 6px;font-size:13px;font-weight:800;color:var(--mut);cursor:pointer;background:#0E0B18;user-select:none}
-.zychip.on{border-color:var(--acc);color:#fff;background:rgba(168,85,247,.20);box-shadow:0 0 14px var(--glow)}
+.zychip{flex:1;text-align:center;border:1px solid var(--ln2);border-radius:11px;padding:11px 6px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:800;color:var(--mut);cursor:pointer;background:var(--pan2);user-select:none;transition:all .18s}
+.zychip.on{border-color:var(--pk);color:var(--pkd);background:#ffeaf5;box-shadow:0 0 0 4px rgba(230,54,156,.10)}
 .zyprev{margin-top:16px}
-.zyprev .lab{font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
-#zyfpv{width:100%;box-sizing:border-box;min-height:220px;background:#0B0814;border:1px solid var(--line);border-radius:12px;color:#D9D2EC;font-size:12px;line-height:1.6;padding:12px;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;margin:0}
+.zyprev .lab{font-family:'Space Mono',monospace;font-size:9.5px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--pkd);margin-bottom:7px}
+#zyfpv{width:100%;box-sizing:border-box;min-height:220px;background:#120a10;border:1px solid #3a2333;border-radius:12px;color:#ffd9ec;font-size:12px;line-height:1.6;padding:12px;font-family:'JetBrains Mono','Space Mono',ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;margin:0}
 .zybtns{display:flex;gap:10px;margin-top:13px}
-.zybtn{flex:1;border:none;border-radius:12px;padding:13px 10px;font-size:13.5px;font-weight:800;cursor:pointer;color:#fff;font-family:inherit;letter-spacing:.2px}
-.zybtn.cpy{background:linear-gradient(135deg,#8B5CF6,#D946EF)}
-.zybtn.wa{background:linear-gradient(135deg,#25D366,#128C7E)}
+.zybtn{flex:1;border:none;border-radius:12px;padding:13px 10px;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:800;letter-spacing:.08em;cursor:pointer;color:#fff}
+.zybtn.cpy{background:linear-gradient(135deg,var(--pk),var(--pkd));box-shadow:0 8px 20px rgba(230,54,156,.30)}
+.zybtn.wa{background:linear-gradient(135deg,#25d366,#128c7e);box-shadow:0 8px 20px rgba(37,211,102,.25)}
 .zybtn:active{transform:scale(.97)}
+/* carrinho — drop no seu modelo */
+#dform .ddropnote{font-size:11px;line-height:1.5;color:#c0392b;background:#fff0f0;border:1px solid #ffd0d0;border-radius:10px;padding:8px 10px;margin-bottom:8px}
+#dform .ddropnote .res{color:#ff2d55;font-weight:800}
+#dform select{background:var(--pan2) url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23e6369c'/%3E%3C/svg%3E") no-repeat right 10px center;border:1px solid var(--ln);color:var(--tx);padding:11px 26px 11px 12px;font-size:12.5px;border-radius:11px;margin-bottom:8px;-webkit-appearance:none;appearance:none}
+#dform select:focus{outline:none;border-color:var(--pk);box-shadow:0 0 0 4px rgba(230,54,156,.12)}
+#dform .envsel{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+#dform .uchip{text-align:center;border:1px solid var(--ln2);border-radius:11px;padding:10px 4px;font-family:'Space Mono',monospace;font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--mut);cursor:pointer;background:var(--pan2);user-select:none;transition:all .18s}
+#dform .uchip.on{border-color:var(--pk);color:var(--pkd);background:#ffeaf5;box-shadow:0 0 0 4px rgba(230,54,156,.10)}
 @media(max-width:420px){.zybtns{flex-direction:column}}
 </style></head><body>
 <div class="mq"><div class="mq-in"><div class="mq-g"><span>ZENDA YA ✦ IMPORTAÇÃO DIRETA ✦ ENVIO TERÇA & QUINTA ✦ SAI DE SP ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ SEM RESHIP ✦</span></div><div class="mq-g"><span>ZENDA YA ✦ IMPORTAÇÃO DIRETA ✦ ENVIO TERÇA & QUINTA ✦ SAI DE SP ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ SEM RESHIP ✦</span></div></div></div>
@@ -1104,13 +1112,17 @@ Preço justo e qualidade ✅ · Todo o material sai junto 🚀</pre></div>
   <div id="dlines" hidden></div>
   <div id="dtot" class="dtot" hidden></div>
   <form id="dform" novalidate>
-   <div class="fflag">DADOS DE ENTREGA</div>
-   <input name="nome" placeholder="NOME *" autocomplete="off">
-   <input name="cpf" placeholder="CPF (se quiser)" maxlength="14" autocomplete="off">
-   <input name="end" placeholder="ENDEREÇO — RUA, NÚMERO *" autocomplete="off">
+   <div class="fflag">💎 FORMULÁRIO DE ENDEREÇO — DROP ✍️</div>
+   <div class="ddropnote">Preste atenção no preenchimento · confira o endereço antes de enviar. <b>Você é o único responsável caso esteja incorreto 😉</b><br><span class="res">❌ NÃO EXISTE RESHIP ❌</span></div>
+   <input name="vulgo" placeholder="SEU VULGO" maxlength="40" autocomplete="off">
+   <input name="nome" placeholder="NOME COMPLETO *" autocomplete="off">
+   <div class="row2"><input name="cpf" placeholder="CPF" maxlength="14" autocomplete="off"><input name="tel" placeholder="TEL * se transportadora" maxlength="15" autocomplete="off"></div>
+   <input name="end" placeholder="ENDEREÇO — RUA / AVENIDA *" autocomplete="off">
+   <div class="row2"><input name="num" placeholder="NÚMERO" maxlength="8" autocomplete="off"><input name="comp" placeholder="COMPLEMENTO" maxlength="24" autocomplete="off"></div>
    <div class="row2"><input name="bairro" placeholder="BAIRRO" autocomplete="off"><input name="cid" placeholder="CIDADE" autocomplete="off"></div>
-   <div class="row2"><input name="uf" placeholder="UF" maxlength="2" style="width:70px" autocomplete="off"><input name="cep" placeholder="CEP" maxlength="9" autocomplete="off"></div>
-   <textarea name="obs" rows="2" placeholder="OBS — forma de pagamento, horário, combinado (opcional)"></textarea>
+   <div class="row2"><select name="uf" style="width:86px"><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select><input name="cep" placeholder="CEP" maxlength="9" autocomplete="off"></div>
+   <div class="envsel"><span class="uchip" data-v="CORREIO">📫 CORREIO</span><span class="uchip" data-v="TRANSPORTADORA">🚛 TRANSPORTADORA</span></div>
+   <textarea name="obs" rows="2" placeholder="OBS — pagamento, horário, combinado (opcional)"></textarea>
   </form>
   <div class="dacts">
    <button type="button" class="dw" id="sendwa">ENVIAR PEDIDO NO WHATS ↗</button>
@@ -1187,7 +1199,9 @@ function addCart(card){
 }
 function quickPedir(card){
  var pd=PD[card.dataset.k],sp=pd.t[curTier(card)],q=Math.min(9999,Math.max(qtyOf(card),sp[4]||1));
- var msg='🛒 PEDIDO RÁPIDO — ZENDA YA\nPRODUTO: '+pd.n+' ['+pd.sku+']\nITEM: '+sp[0]+' ×'+q+(sp[2]==='G'?'g':'')+' — '+pf(sp[1]*q)+sp[5]+'\nNOME:\nENDEREÇO: ';
+ var oq=curDrop();
+ oq.pedido='🛒 PEDIDO RÁPIDO — ZENDA YA\nPRODUTO: '+pd.n+' ['+pd.sku+']\nITEM: '+sp[0]+' ×'+q+(sp[2]==='G'?'g':'')+' — '+pf(sp[1]*q)+sp[5];
+ var msg=dropTpl(oq);
  window.open('https://wa.me/'+NUM+'?text='+encodeURIComponent(msg),'_blank');
 }
 
@@ -1219,7 +1233,14 @@ $('#dlines').addEventListener('click',function(e){
  save();renderCart();
 });
 
-function openD(){$('#drawer').classList.add('on');$('#scrim').classList.add('on')}
+function prefillD(){
+ try{
+  [['vulgo','zyvul'],['nome','zynome'],['cpf','zycpf'],['tel','zytel'],['end','zyend'],['num','zynum'],['comp','zycomp'],['bairro','zybair'],['cid','zycid'],['cep','zycep']].forEach(function(pr){
+   var el=f.elements[pr[0]];if(el&&!el.value.trim()){var z=document.getElementById(pr[1]);if(z&&z.value.trim())el.value=z.value.trim()}});
+  var su=f.elements['uf'];if(su&&!su.value){var z2=document.getElementById('zyuf');if(z2&&z2.value)su.value=z2.value}
+ }catch(e){}
+}
+function openD(){prefillD();$('#drawer').classList.add('on');$('#scrim').classList.add('on')}
 function closeD(){$('#drawer').classList.remove('on');$('#scrim').classList.remove('on')}
 $('#cartb').addEventListener('click',function(){renderCart();openD()});
 $('#dclos').addEventListener('click',closeD);
@@ -1231,22 +1252,60 @@ f.addEventListener('input',function(e){
  var v=e.target.value,n=e.target.name;
  if(n==='cpf')v=v.replace(/\D/g,'').slice(0,11).replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');
  if(n==='cep')v=v.replace(/\D/g,'').slice(0,8).replace(/(\d{5})(\d)/,'$1-$2');
+ if(n==='tel')v=v.replace(/\D/g,'').slice(0,11).replace(/^(\d{2})(\d)/,'($1) $2').replace(/^(\(\d{2}\) \d{5})(\d)/,'$1-$2');
+ if(n==='num')v=v.replace(/\D/g,'').slice(0,8);
  if(n==='uf')v=v.replace(/[^a-zA-Z]/g,'').toUpperCase().slice(0,2);
  e.target.value=v;
 });
+$$('.uchip',f).forEach(function(c){c.addEventListener('click',function(){$$('.uchip',f).forEach(function(x){x.classList.remove('on')});c.classList.add('on')})});
 function vals(){var o={},i;for(i=0;i<f.elements.length;i++){var el=f.elements[i];if(el.name)o[el.name]=(el.value||'').trim()}return o}
+function curDrop(){
+ function gv(id){var e=document.getElementById(id);return e?(e.value||'').trim():''}
+ function dv(n){var el=f.elements[n];return el?(el.value||'').trim():''}
+ var env='';var on=$('.uchip.on',f);if(on)env=on.dataset.v;
+ return {vulgo:dv('vulgo')||gv('zyvul'),nome:dv('nome')||gv('zynome'),cpf:dv('cpf')||gv('zycpf'),tel:dv('tel')||gv('zytel'),end:dv('end')||gv('zyend'),num:dv('num')||gv('zynum'),comp:dv('comp')||gv('zycomp'),bair:dv('bairro')||gv('zybair'),cid:dv('cid')||gv('zycid'),uf:dv('uf')||gv('zyuf'),cep:dv('cep')||gv('zycep'),envio:env};
+}
+function dropTpl(o){
+ var L=[];
+ L.push('💎Fórmulario de endereço ✍️','');
+ L.push('Seu Vulgo: '+(o.vulgo||''));
+ L.push('');
+ L.push('Preste atenção no preenchimento.');
+ L.push('Antes de me encaminhar confira o endereço com atenção. Você é o único responsável caso esteja incorreto 😉');
+ L.push('❌NÃO EXISTE RESHIP❌');
+ L.push('');
+ L.push('PREENCHER EXATAMENTE NA ORDEM DO FORMULÁRIO');
+ L.push('Nome: '+(o.nome||''));
+ L.push('CPF: '+(o.cpf||''));
+ L.push('TEL: '+(o.tel||'')+'   Se for transportadora');
+ L.push('Endereço: '+(o.end||''));
+ L.push('Numero: '+(o.num||''));
+ L.push('Complemento: '+(o.comp||''));
+ L.push('Bairro: '+(o.bair||''));
+ L.push('Cidade: '+(o.cid||''));
+ L.push('Estado: '+(o.uf||''));
+ L.push('Cep: '+(o.cep||''));
+ L.push('');L.push('');
+ L.push('📝Pedido: ');
+ L.push(String(o.pedido||''));
+ L.push('');
+ L.push('🚚📦 escolha a forma  de envio: '+(o.envio||''));
+ L.push('');
+ L.push('Preencha seus dados utilizando a primeira letra maiúscula nos nomes próprios e mantendo as demais letras minúsculas');
+ L.push('Ex: João Oliveira de Jesus');
+ L.push('Rua José de Sá');
+ L.push('(Isso evita possíveis erro na edição).');
+ return L.join('\n');
+}
+try{window.ZY.dropTpl=dropTpl;window.ZY.curDrop=curDrop}catch(z9){}
 function buildMsg(v){
  if(!cart.length)return null;
  var totG=0,items=cart.map(function(l){var pd=PD[l.k],sp=pd.t[l.i];totG+=sp[1]*l.q;
   return '• '+pd.n+' ['+pd.sku+']\n  '+sp[0]+' ×'+l.q+(sp[2]==='G'?'g':'')+' — '+pf(sp[1]*l.q)+sp[5]});
- var m='🧾 NOVO PEDIDO — ZENDA YA\n\nCLIENTE: '+(v.nome||'-');
- if(v.cpf)m+='\nCPF: '+v.cpf;
- m+='\nENDEREÇO: '+(v.end||'-')+(v.bairro?', '+v.bairro:'');
- var cid=[v.cid,v.uf].filter(Boolean).join('/');if(cid)m+='\nCIDADE: '+cid+(v.cep?' · CEP '+v.cep:'');
- if(v.obs)m+='\nOBS: '+v.obs;
- m+='\n\nITENS:\n'+items.join('\n');
- m+='\n\nTOTAL GERAL: '+pf(totG);
- return m;
+ var o=curDrop();
+ o.pedido=items.join('\n')+'\n\nTOTAL GERAL: '+pf(totG);
+ if(v&&v.obs)o.pedido+='\n\nOBS: '+v.obs;
+ return dropTpl(o);
 }
 function collect(){
  var v=vals();
@@ -1256,6 +1315,11 @@ function collect(){
   if(!v.end)f.elements['end'].classList.add('shake');
   setTimeout(function(){f.classList.remove('err');$$('.shake').forEach(function(x){x.classList.remove('shake')})},500);
   toast('PREENCHA NOME E ENDEREÇO');return null}
+ var onT=$('.uchip.on',f);
+ if(onT&&onT.dataset.v==='TRANSPORTADORA'&&!v.tel){
+  f.classList.add('err');f.elements['tel'].classList.add('shake');
+  setTimeout(function(){f.classList.remove('err');$$('.shake').forEach(function(x){x.classList.remove('shake')})},500);
+  toast('PREENCHA O TELEFONE (TRANSPORTADORA)');return null}
  return v;
 }
 $('#sendwa').addEventListener('click',function(){
@@ -1410,6 +1474,10 @@ var b=$('#hintx');if(b)b.addEventListener('click',function(){h.style.display='no
 (function(){
 var g=function(id){return document.getElementById(id)};
 if(!g('zyform'))return;
+function syncD(){try{var F=document.getElementById('dform');if(!F)return;
+[['zyvul','vulgo'],['zynome','nome'],['zycpf','cpf'],['zytel','tel'],['zyend','end'],['zynum','num'],['zycomp','comp'],['zybair','bairro'],['zycid','cid'],['zycep','cep']].forEach(function(pr){var el=g(pr[0]),s=F.elements[pr[1]];if(el&&s&&!el.value.trim()&&s.value.trim())el.value=s.value.trim()});
+var sf=F.elements['uf'];if(sf&&sf.value.trim()&&!g('zyuf').value)g('zyuf').value=sf.value.trim();}catch(e){}}
+syncD();
 function digits(s){return s.replace(/\D/g,'')}
 function mCPF(v){var d=digits(v).slice(0,11),o='';if(d.length>0)o=d.slice(0,3);if(d.length>3)o+='.'+d.slice(3,6);if(d.length>6)o+='.'+d.slice(6,9);if(d.length>9)o+='-'+d.slice(9);return o}
 function mTEL(v){var d=digits(v).slice(0,11),o='';if(d.length>0)o='('+d.slice(0,2)+')';if(d.length>2)o+=' '+d.slice(2,7);if(d.length>7)o+='-'+d.slice(7);return o}
