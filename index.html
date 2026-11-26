@@ -11,7 +11,7 @@
 <title>ZENDA YA ✦ loja</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>/* ===== ZENDA YA · LOJA PREMIUM · DARK ROSA METÁLICA · V-D11 ===== */
+<style>/* ===== ZENDA YA · LOJA PREMIUM · DARK ROSA METÁLICA · V-D13 ===== */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#130a15;--pan:#1e1224;--pan2:#2a1830;--ln:#3d2444;--ln2:#5a3160;--tx:#f7edf6;--mut:#c49dbb;--pk:#ff3ba7;--pkd:#c2187f;--pk2:#ff9fd6;--glow:rgba(255,59,167,.4);--gold:#f2a83c;--roseg:linear-gradient(120deg,#ffb1da 0%,#ff3ba7 42%,#c2187f 74%,#6e0f4a 100%)}
 html{scroll-behavior:smooth}
@@ -1153,16 +1153,16 @@ function apply(){
   if(t==='tabs'){s.style.display='none';return}
   if(t!=='all'&&t!==s.dataset.sec){s.style.display='none';return}
   s.style.display='';
-  var any=false;
+  var any=false,nrc=$$('.card',s).length;
   $$('.card',s).forEach(function(c){
    var ok=(!state.q||c.dataset.n.indexOf(state.q)>-1)&&(!window.ZYFAV||window.ZYFAV[c.dataset.k]);
    c.style.display=ok?'':'none';if(ok)any=true});
-  if(!any)s.style.display='none';
+  if(nrc&&!any)s.style.display='none';else if(!nrc&&state.q)s.style.display='none';
   var cn=$('.cnt',s);if(cn)cn.textContent=s.style.display==='none'?0:$$('.card',s).filter(function(c){return c.style.display!=='none'}).length;
  });
  $$('.tb').forEach(function(b){b.classList.toggle('on',b.dataset.t===state.tab)});
 }
-$('#tabs').addEventListener('click',function(e){var b=e.target.closest('.tb');if(!b)return;state.tab=b.dataset.t;apply();window.scrollTo({top:0})});
+$('#tabs').addEventListener('click',function(e){var b=e.target.closest('.tb');if(!b)return;state.tab=b.dataset.t;if(b.dataset.t==='form'&&$('#q').value){$('#q').value='';state.q=''}apply();window.scrollTo({top:0})});
 $('#q').addEventListener('input',function(e){state.q=norm(e.target.value.trim());apply()});
 
 function curTier(card){return parseInt(card.querySelector('.tier.sel').dataset.i,10)}
@@ -1268,10 +1268,12 @@ function dropTpl(o){
  L.push('Seu Vulgo: '+(o.vulgo||''));
  L.push('');
  L.push('Preste atenção no preenchimento.');
+ L.push('');
  L.push('Antes de me encaminhar confira o endereço com atenção. Você é o único responsável caso esteja incorreto 😉');
  L.push('❌NÃO EXISTE RESHIP❌');
  L.push('');
  L.push('PREENCHER EXATAMENTE NA ORDEM DO FORMULÁRIO');
+ L.push('');
  L.push('Nome: '+(o.nome||''));
  L.push('CPF: '+(o.cpf||''));
  L.push('TEL: '+(o.tel||'')+'   Se for transportadora');
@@ -1291,7 +1293,7 @@ function dropTpl(o){
  L.push('Preencha seus dados utilizando a primeira letra maiúscula nos nomes próprios e mantendo as demais letras minúsculas');
  L.push('Ex: João Oliveira de Jesus');
  L.push('Rua José de Sá');
- L.push('(Isso evita possíveis erro na edição).');
+ L.push('(Isso evita possíveis erro na edição)');
  return L.join('\n');
 }
 try{window.ZY.dropTpl=dropTpl;window.ZY.curDrop=curDrop}catch(z9){}
@@ -1489,10 +1491,12 @@ L.push('💎Fórmulario de endereço ✍️','');
 L.push('Seu Vulgo: '+val('zyvul'));
 L.push('');
 L.push('Preste atenção no preenchimento.');
+L.push('');
 L.push('Antes de me encaminhar confira o endereço com atenção. Você é o único responsável caso esteja incorreto 😉');
 L.push('❌NÃO EXISTE RESHIP❌');
 L.push('');
 L.push('PREENCHER EXATAMENTE NA ORDEM DO FORMULÁRIO');
+L.push('');
 L.push('Nome: '+val('zynome'));
 L.push('CPF: '+val('zycpf'));
 L.push('TEL: '+val('zytel')+'   Se for transportadora');
@@ -1513,7 +1517,7 @@ L.push('');
 L.push('Preencha seus dados utilizando a primeira letra maiúscula nos nomes próprios e mantendo as demais letras minúsculas');
 L.push('Ex: João Oliveira de Jesus');
 L.push('Rua José de Sá');
-L.push('(Isso evita possíveis erro na edição).');
+L.push('(Isso evita possíveis erro na edição)');
 var txt=L.join('\n');
 g('zyfpv').textContent=txt;
 return txt;
