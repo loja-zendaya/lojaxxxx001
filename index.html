@@ -11,7 +11,7 @@
 <title>ZENDA YA ✦ loja</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Big+Shoulders+Display:wght@600;800&family=Archivo:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>/* ===== ZENDA YA · LOJA PREMIUM · ROSA/BRANCO · V-D14 ===== */
+<style>/* ===== ZENDA YA · LOJA PREMIUM · ROSA/BRANCO · V-D15 ===== */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#fdf4f9;--pan:#ffffff;--pan2:#fff2f8;--ln:#f6d6e8;--ln2:#efb1d5;--tx:#3b1430;--mut:#a26e8c;--pk:#e6369c;--pkd:#bd1580;--pk2:#ff85c7;--glow:rgba(230,54,156,.28);--gold:#d98a1f}
 html{scroll-behavior:smooth}
@@ -1210,7 +1210,7 @@ function quickPedir(card){
  var oq=curDrop();
  oq.pedido='🛒 PEDIDO RÁPIDO — ZENDA YA\nPRODUTO: '+pd.n+' ['+pd.sku+']\nITEM: '+sp[0]+' ×'+q+(sp[2]==='G'?'g':'')+' — '+pf(sp[1]*q)+sp[5];
  var msg=dropTpl(oq);
- window.open('https://wa.me/'+NUM+'?text='+encodeURIComponent(msg),'_blank');
+ window.open('https://api.whatsapp.com/send?phone='+NUM+'&text='+encodeURIComponent(msg.normalize('NFC')),'_blank');
 }
 
 function renderCart(){
@@ -1335,7 +1335,7 @@ function collect(){
 $('#sendwa').addEventListener('click',function(){
  var v=collect();if(!v)return;
  var m=buildMsg(v);if(!m){toast('ADICIONE PRODUTOS AO CARRINHO');return}
- window.open('https://wa.me/'+NUM+'?text='+encodeURIComponent(m),'_blank');
+ window.open('https://api.whatsapp.com/send?phone='+NUM+'&text='+encodeURIComponent(m.normalize('NFC')),'_blank');
 });
 $('#sendtx').addEventListener('click',function(){
  var v=collect();if(!v)return;
@@ -1542,7 +1542,7 @@ Object.keys(M).forEach(function(id){g(id).addEventListener('input',function(){th
 g('zyuf').addEventListener('change',build);
 ['zye1','zye2'].forEach(function(id){g(id).addEventListener('click',function(){var on=g(id).classList.contains('on');g('zye1').classList.remove('on');g('zye2').classList.remove('on');if(!on)g(id).classList.add('on');build()})});
 g('zyfcopy').addEventListener('click',function(){doCopy(build(),function(){flash(this,'✅ COPIADA!')}.bind(g('zyfcopy')))});
-g('zyfsend').addEventListener('click',function(){window.open('https://wa.me/5511973303761?text='+encodeURIComponent(build()),'_blank')});
+g('zyfsend').addEventListener('click',function(){window.open('https://api.whatsapp.com/send?phone=5511973303761&text='+encodeURIComponent(build().normalize('NFC')),'_blank')});
 build();
 })();
 </script>
