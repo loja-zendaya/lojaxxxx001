@@ -31,8 +31,8 @@ img{-webkit-user-drag:none}
 .mq-g{display:flex;gap:30px;padding:7px 15px 7px 30px;white-space:nowrap;font-family:Archivo,sans-serif;font-size:9.5px;letter-spacing:.3em;color:#fff}
 @keyframes mq{to{transform:translateX(-50%)}}
 header{display:flex;justify-content:space-between;align-items:center;padding:calc(30px + env(safe-area-inset-top)) 18px 26px;gap:12px;position:relative;overflow:hidden;background:radial-gradient(130% 160% at 85% -20%,rgba(255,133,199,.5) 0%,transparent 55%),linear-gradient(118deg,#2c0d2b 0%,#5b1143 42%,#a01e6d 78%,#e6369c 115%)}
-header:before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.13) 1px,transparent 1.6px);background-size:22px 22px;opacity:.55;pointer-events:none}
-header:after{content:'';position:absolute;left:-30%;bottom:-75%;width:160%;height:150%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,133,199,.4),transparent 70%);pointer-events:none}
+header:before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.13) 1px,transparent 1.6px);background-size:22px 22px;opacity:.4;z-index:1;pointer-events:none}
+header:after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(18,6,19,.55) 0%,rgba(18,6,19,.72) 100%),radial-gradient(60% 100% at 85% -10%,rgba(255,59,167,.32),transparent 65%)}
 .lgl{position:relative;z-index:2}
 .lgl h1{font-family:Monoton,cursive;font-weight:400;font-size:47px;line-height:.95;letter-spacing:.04em;background:linear-gradient(100deg,#fff 0%,var(--pk2) 28%,#ff5fb8 50%,#fff 72%,var(--pk2) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:logo 5s linear infinite;filter:drop-shadow(0 0 16px rgba(255,133,199,.75))}
 @keyframes logo{to{background-position:250% 0}}
@@ -263,19 +263,17 @@ body{padding-bottom:74px}
 #dform .uchip.on{border-color:var(--pk);color:var(--pk2);background:rgba(255,59,167,.16);box-shadow:0 0 0 4px rgba(255,59,167,.10)}
 @media(max-width:420px){.zybtns{flex-direction:column}}
 
-/* ===== v-d11 · chip A SUA Nº 01 + rodapé banner ===== */
+/* ===== v-d12 · chip A SUA 01 + arte no cabeçalho ===== */
 .lgrow{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap}
 .n1{display:inline-block;margin-top:9px;font-family:Archivo,sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.2em;padding:4px 10px 3px;border-radius:999px;color:#ffd3ec;background:linear-gradient(120deg,rgba(255,59,167,.22),rgba(255,59,167,.05));border:1px solid rgba(255,159,214,.6);box-shadow:0 0 12px rgba(255,59,167,.30);animation:n1bob 2.8s ease-in-out infinite;white-space:nowrap}
 @keyframes n1bob{0%,100%{transform:translateY(0) scale(1);box-shadow:0 0 10px rgba(255,59,167,.28),inset 0 0 8px rgba(255,59,167,.12)}50%{transform:translateY(-4px) scale(1.05);box-shadow:0 0 24px rgba(255,59,167,.60),inset 0 0 12px rgba(255,59,167,.25)}}
-.fbg img{width:100%;height:auto;display:block;animation:fzoom 16s ease-in-out infinite alternate}
+.hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:0;opacity:.95;animation:fzoom 18s ease-in-out infinite alternate}
 @keyframes fzoom{from{transform:scale(1)}to{transform:scale(1.06)}}
-.fbg:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,6,15,0) 55%,rgba(13,6,15,.55) 88%,#0d060f 100%);pointer-events:none}
-.fmq{position:absolute;left:-2%;right:-2%;bottom:9%;z-index:2;border-top:none;box-shadow:0 8px 30px rgba(255,59,167,.35)}
-.fmq .mq-g{text-shadow:0 1px 4px rgba(60,0,40,.5)}
 </style></head><body>
 <div class="mq"><div class="mq-in"><div class="mq-g"><span>ZENDA YA ✦ IMPORTAÇÃO DIRETA ✦ ENVIO TERÇA & QUINTA ✦ SAI DE SP ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ SEM RESHIP ✦</span></div><div class="mq-g"><span>ZENDA YA ✦ IMPORTAÇÃO DIRETA ✦ ENVIO TERÇA & QUINTA ✦ SAI DE SP ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ SEM RESHIP ✦</span></div></div></div>
 <header>
- <div class="lgl"><div class="lgrow"><h1>ZENDA<span>YA</span></h1><span class="n1">A SUA Nº 01</span></div><p>IMPORTAÇÃO DIRETA · ENVIO TERÇA & QUINTA · SP</p><em>by: Zendaya 💋</em></div>
+ <img class="hbg" src="assets/imgs/banner_rodape.webp" alt="" aria-hidden="true">
+ <div class="lgl"><div class="lgrow"><h1>ZENDA<span>YA</span></h1><span class="n1">A SUA 01</span></div><p>IMPORTAÇÃO DIRETA · ENVIO TERÇA & QUINTA · SP</p><em>by: Zendaya 💋</em></div>
  <div class="stmp">ENVIO TER✦QUI<br><b>SAI DE SP ✈</b></div>
 </header>
 <div class="avisos">
@@ -1098,8 +1096,7 @@ AVISOS
 Preço justo e qualidade ✅ · Todo o material sai junto 🚀</pre></div>
 </section>
 <footer>
-<div class="fbg"><img src="assets/imgs/banner_rodape.webp" alt="" loading="lazy"></div>
-<div class="mq fmq"><div class="mq-in"><div class="mq-g"><span>ZENDA YA ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ PEDIDOS PELO ZAP ✦</span></div><div class="mq-g"><span>ZENDA YA ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ PEDIDOS PELO ZAP ✦</span></div></div></div>
+<div class="mq"><div class="mq-in"><div class="mq-g"><span>ZENDA YA ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ PEDIDOS PELO ZAP ✦</span></div><div class="mq-g"><span>ZENDA YA ✦ PREÇO JUSTO E QUALIDADE ✅ ✦ TODO O MATERIAL SAI JUNTO 🚀 ✦ PEDIDOS PELO ZAP ✦</span></div></div></div>
 <p>ZENDA YA © 2026 · ENVIO TERÇA & QUINTA · SAI DE SP · PEDIDOS PELO WHATS</p>
 </footer>
 <button type="button" id="cartb" aria-label="carrinho">🧺<b id="cartn" class="off">0</b></button>
